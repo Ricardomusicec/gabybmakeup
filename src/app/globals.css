@@ -74,3 +74,12 @@ button:focus-visible,
   background: var(--color-blush-deep);
   color: var(--color-wine-deep);
 }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rotate, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--rotate, 0deg));
+  }
+}
