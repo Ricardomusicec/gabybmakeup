@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  /* GabyBMakeUp brand palette — inspired by a makeup artist's shade card:
+     wine as the pigment of confidence, gold as the finish, ivory as the canvas. */
+  --color-ivory: #fbf6f1;
+  --color-ivory-deep: #f2e7de;
+  --color-blush: #e9c6c1;
+  --color-blush-deep: #d9a29d;
+  --color-wine: #6b2138;
+  --color-wine-deep: #45162a;
+  --color-gold: #b1854a;
+  --color-gold-soft: #d9bd8f;
+  --color-ink: #241318;
+  --color-ink-soft: #5c4a4e;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-plex-mono);
+}
+
+@theme inline {
+  --color-ivory: var(--color-ivory);
+  --color-ivory-deep: var(--color-ivory-deep);
+  --color-blush: var(--color-blush);
+  --color-blush-deep: var(--color-blush-deep);
+  --color-wine: var(--color-wine);
+  --color-wine-deep: var(--color-wine-deep);
+  --color-gold: var(--color-gold);
+  --color-gold-soft: var(--color-gold-soft);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-body), sans-serif;
+}
+
+/* visible keyboard focus, always */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-wine);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-blush-deep);
+  color: var(--color-wine-deep);
+}
